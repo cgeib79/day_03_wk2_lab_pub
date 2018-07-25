@@ -5,7 +5,7 @@ require_relative('../pub.rb')
 
 class TestCusts <MiniTest::Test
   def setup
-    @customer1 = Customer.new("Jane", 10)
+    @customer1 = Customer.new("Jane", 10, 16)
     @pub = Pub.new('Horseshoe Bar', 100)
     @drink1 = Drink.new('Wine', 5)
     @drink2 = Drink.new('Whisky', 5)
@@ -15,6 +15,10 @@ class TestCusts <MiniTest::Test
     @pub.add_drink(@drink2)
     @pub.add_drink(@drink3)
   end
+
+def test_is_legal()
+  assert_equal(false, @customer1.buy_drink(@pub))
+end
 
   def test_name()
     assert_equal("Jane", @customer1.name)

@@ -1,11 +1,18 @@
 class Customer
-  attr_reader :name, :wallet
+  attr_reader :name, :wallet, :age
 
-  def initialize (name, wallet)
+  def initialize (name, wallet, age)
     @name = name
     @wallet = wallet
     @liver = []
+    @age = age
   end
+
+#   def is_legal()
+#     if @age >= 18
+#       return true
+#   end
+# end
 
   def check_wallet()
     return @wallet
@@ -16,10 +23,10 @@ class Customer
   end
 
   def buy_drink(pub)
-    drink = pub.sell_drink(@drink1)
-    @liver.push(drink)
-    @wallet -= drink.price()
-    pub.add_money(drink.price)
+      drink = pub.sell_drink(@drink1)
+      @liver.push(drink)
+      @wallet -= drink.price()
+      pub.add_money(drink.price)
   end
 
 end
