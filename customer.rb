@@ -8,11 +8,9 @@ class Customer
     @age = age
   end
 
-#   def is_legal()
-#     if @age >= 18
-#       return true
-#   end
-# end
+  def is_legal()
+    age >= 18
+  end
 
   def check_wallet()
     return @wallet

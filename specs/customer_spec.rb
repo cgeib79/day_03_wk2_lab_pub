@@ -16,17 +16,17 @@ class TestCusts <MiniTest::Test
     @pub.add_drink(@drink3)
   end
 
-def test_is_legal()
-  assert_equal(false, @customer1.buy_drink(@pub))
-end
-
   def test_name()
-    assert_equal("Jane", @customer1.name)
+    assert_equal("Jane", @customer1.name())
   end
 
-def test_drunk()
-  assert_equal(0, @customer1.check_drunk)
-end
+  def test_is_legal()
+    assert_equal(false, @customer1.is_legal())
+  end
+
+  def test_drunk()
+    assert_equal(0, @customer1.check_drunk)
+  end
 
   def test_buy_drink()
     @customer1.buy_drink(@pub)
